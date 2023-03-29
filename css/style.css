@@ -440,11 +440,18 @@ body.lock {
 @media (max-width: 450px) {
   .advantages__row {
     grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
   }
 }
 .advantages__column {
   position: relative;
   margin-bottom: 20px;
+}
+@media (max-width: 450px) {
+  .advantages__column {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0352941176);
+    padding-bottom: 10px;
+  }
 }
 .advantages__item {
   text-align: center;
