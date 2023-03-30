@@ -645,6 +645,223 @@ body.lock {
   box-shadow: 0 0 15px #fff;
 }
 
-.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+.mfp-zoom-out-cur,
+.mfp-zoom-out-cur .mfp-image-holder .mfp-close {
   cursor: pointer;
+}
+
+.order {
+  padding: 100px 0;
+  background: url("../img/background28.jpg");
+  background-position: center;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .order {
+    padding: 50px 0;
+  }
+}
+.order__row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 50px;
+  padding-top: 50px;
+}
+@media (max-width: 1000px) {
+  .order__row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 850px) {
+  .order__row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 650px) {
+  .order__row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 450px) {
+  .order__row {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+}
+.order__column {
+  position: relative;
+  margin-bottom: 20px;
+}
+@media (max-width: 450px) {
+  .order__column {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0352941176);
+    padding-bottom: 10px;
+  }
+}
+.order__item {
+  text-align: center;
+}
+.order__item span {
+  position: absolute;
+  top: -80px;
+  right: -20px;
+  font-size: 120px;
+  opacity: 0.05;
+  font-weight: 700;
+  font-family: "Yanone Kaffeesatz";
+  z-index: 1;
+  border: 1px solid #1b1b1d;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.order__image {
+  margin-bottom: 20px;
+  z-index: 2;
+  position: relative;
+}
+.order__img {
+  width: 100px;
+}
+.order__text {
+  font-size: 18px;
+  line-height: 1.2;
+}
+.order__link {
+  padding: 20px 50px;
+  width: 400px;
+  font-size: 24px;
+  display: inline-block;
+  margin-top: 50px;
+}
+@media (max-width: 550px) {
+  .order__link {
+    width: 100%;
+    font-size: 20px;
+  }
+}
+
+.price {
+  padding: 100px 0;
+  background: rgba(44, 78, 70, 0.0274509804);
+}
+@media (max-width: 768px) {
+  .price {
+    padding: 50px 0;
+  }
+}
+@media (max-width: 550px) {
+  .price__title {
+    margin-bottom: 30px;
+  }
+}
+.price__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+}
+@media (max-width: 1000px) {
+  .price__inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.price-table {
+  flex: 0 1 50%;
+  box-shadow: 0 0 10px rgba(27, 27, 29, 0.3294117647);
+}
+@media (max-width: 1000px) {
+  .price-table {
+    width: 100%;
+  }
+}
+
+.price-info {
+  flex: 0 1 50%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px 20px 20px 0;
+  box-shadow: 0 0 10px rgba(27, 27, 29, 0.0470588235);
+}
+@media (max-width: 1000px) {
+  .price-info {
+    border-radius: 0px 0px 20px 20px;
+  }
+}
+@media (max-width: 550px) {
+  .price-info {
+    font-size: 16px;
+  }
+}
+.price-info__title {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.price-info__descr {
+  margin-bottom: 10px;
+}
+.price-info__text {
+  padding-left: 30px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.price-info__text::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-image: linear-gradient(76.3deg, rgb(69, 103, 131) 12.6%, rgb(44, 62, 78) 82.8%);
+  box-shadow: 0 0 8px var(--basic);
+  border-radius: 50%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+@media (max-width: 1000px) {
+  table {
+    max-width: 100%;
+  }
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px 8px 8px 12px;
+  text-align: left;
+  font-size: 20px;
+}
+@media (max-width: 450px) {
+  th,
+  td {
+    font-size: 19px;
+  }
+}
+
+td {
+  font-size: 17px;
+}
+
+th {
+  background-color: #b1d4cc;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+tr:hover {
+  background-color: rgba(166, 221, 198, 0.2823529412);
 }
