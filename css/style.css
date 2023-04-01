@@ -1201,11 +1201,18 @@ tr:hover {
 .contact__item svg {
   width: 50px;
   height: 50px;
+  transition: all 0.3s ease-in-out;
+}
+.contact__item:hover svg {
+  transform: rotate(5deg);
 }
 .contact__link {
   font-size: 20px;
   color: var(--title-text);
   transition: all 0.3s ease-in-out;
+}
+.contact__link:hover {
+  transform: translateX(5px);
 }
 
 .footer {
