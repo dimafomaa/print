@@ -317,8 +317,6 @@ body.lock {
 		display: flex;
 		z-index: 2;
 		position: relative;
-		justify-content: space-around;
-
 		@media (max-width: 900px) {
 			flex-direction: column;
 			align-items: center;
@@ -331,7 +329,7 @@ body.lock {
 	}
 
 	&__items {
-		flex: 0 1 50%;
+		flex: 0 1 40%;
 
 		@media (max-width: 900px) {
 			flex: 0 1 100%;
@@ -353,7 +351,7 @@ body.lock {
 	&__title {
 		font-family: 'Yanone Kaffeesatz';
 		font-weight: 700;
-		font-size: 100px;
+		font-size: 88px;
 		line-height: 1;
 		margin-bottom: 50px;
 
@@ -364,11 +362,11 @@ body.lock {
 		}
 
 		@media (max-width: 1400px) {
-			font-size: calc(60px + (100 - 60) * ((100vw - 900px) / (1400 - 900)));
+			font-size: calc(55px + (88 - 55) * ((100vw - 900px) / (1400 - 900)));
 		}
 
 		@media (max-width: 900px) {
-			font-size: calc(45px + (100 - 45) * ((100vw - 320px) / (900 - 320)));
+			font-size: calc(45px + (88 - 45) * ((100vw - 320px) / (900 - 320)));
 		}
 	}
 
@@ -406,6 +404,10 @@ body.lock {
 	}
 
 	&__image {
+		margin-left: 200px;
+		@media (max-width: 1400px){
+			margin-left: calc(75px + (200 - 75) * ((100vw - 900px) / (1400 - 900)));;
+		}
 		@media (max-width: 900px) {
 			display: none;
 		}
@@ -422,11 +424,15 @@ body.lock {
 
 	&__img {
 		opacity: 0.9;
-		width: 450px;
+		max-width: 450px;
 		box-shadow: 2px 2px 10px #00000065;
-
+		@media (max-width: 1060px){
+			margin-left: 0;
+			max-width: 450px;
+		}
 		@media (max-width: 900px) {
-			width: 600px;
+			max-width: 100%;
+			width: 650px;
 		}
 	}
 
@@ -943,9 +949,9 @@ tr:hover {
 	&__inner {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 50px;
+		gap: 40px;
 		background-color: #2c4e461c;
-		padding: 50px 100px;
+		padding: 50px 30px 30px;
 		border-radius: 0px 50px 0 50px;
 		border-top: #08604b26 3px solid;
 		border-bottom: #08604b26 3px solid;
@@ -960,6 +966,8 @@ tr:hover {
 			padding: 20px;
 			border-radius: 0px 30px 0 30px;
 			background-color: transparent;
+			border-top: none;
+			border-bottom: none;
 		}
 	}
 

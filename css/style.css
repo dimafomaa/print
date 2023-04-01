@@ -290,7 +290,6 @@ body.lock {
   display: flex;
   z-index: 2;
   position: relative;
-  justify-content: space-around;
 }
 @media (max-width: 900px) {
   .home__inner {
@@ -305,7 +304,7 @@ body.lock {
   }
 }
 .home__items {
-  flex: 0 1 50%;
+  flex: 0 1 40%;
 }
 @media (max-width: 900px) {
   .home__items {
@@ -325,7 +324,7 @@ body.lock {
 .home__title {
   font-family: "Yanone Kaffeesatz";
   font-weight: 700;
-  font-size: 100px;
+  font-size: 88px;
   line-height: 1;
   margin-bottom: 50px;
 }
@@ -336,12 +335,12 @@ body.lock {
 }
 @media (max-width: 1400px) {
   .home__title {
-    font-size: calc(60px + 40 * (100vw - 900px) / 500);
+    font-size: calc(55px + 33 * (100vw - 900px) / 500);
   }
 }
 @media (max-width: 900px) {
   .home__title {
-    font-size: calc(45px + 55 * (100vw - 320px) / 580);
+    font-size: calc(45px + 43 * (100vw - 320px) / 580);
   }
 }
 .home__item {
@@ -373,6 +372,14 @@ body.lock {
 .home__button {
   margin-top: 50px;
 }
+.home__image {
+  margin-left: 200px;
+}
+@media (max-width: 1400px) {
+  .home__image {
+    margin-left: calc(75px + 125 * (100vw - 900px) / 500);
+  }
+}
 @media (max-width: 900px) {
   .home__image {
     display: none;
@@ -388,12 +395,19 @@ body.lock {
 }
 .home__img {
   opacity: 0.9;
-  width: 450px;
+  max-width: 450px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3960784314);
+}
+@media (max-width: 1060px) {
+  .home__img {
+    margin-left: 0;
+    max-width: 450px;
+  }
 }
 @media (max-width: 900px) {
   .home__img {
-    width: 600px;
+    max-width: 100%;
+    width: 650px;
   }
 }
 @media (max-width: 900px) {
@@ -883,9 +897,9 @@ tr:hover {
 .type__inner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
+  gap: 40px;
   background-color: rgba(44, 78, 70, 0.1098039216);
-  padding: 50px 100px;
+  padding: 50px 30px 30px;
   border-radius: 0px 50px 0 50px;
   border-top: rgba(8, 96, 75, 0.1490196078) 3px solid;
   border-bottom: rgba(8, 96, 75, 0.1490196078) 3px solid;
@@ -902,6 +916,8 @@ tr:hover {
     padding: 20px;
     border-radius: 0px 30px 0 30px;
     background-color: transparent;
+    border-top: none;
+    border-bottom: none;
   }
 }
 .type__item {
