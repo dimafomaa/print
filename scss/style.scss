@@ -1290,20 +1290,30 @@ tr:hover {
 	padding: 50px 0;
 	background-color: #2c4e4617;
 	border-radius: 100px 100px 0 0;
+	@media (max-width: 768px){
+		padding-bottom: 20px;
+		border-radius: 50px 50px 0 0;
+
+	}
 	&__title {}
 
 	&__inner {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 0px;
-		justify-items:center;
-
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		gap: 20px;
+		@media (max-width: 600px){
+			justify-content: left;
+			gap: 0;
+		}
 	}
 
 	&__item {
 		display: flex;
 		align-items: center;
 		gap: 20px;
+		max-width: 350px;
 		& svg{
 			width: 50px;
 			height: 50px;
@@ -1312,10 +1322,12 @@ tr:hover {
 		&:hover svg{
 			transform: rotate(5deg);
 		}
+		@media (max-width: 1050px){
+			margin-bottom: 20px;
+		}
 	}
 
 	&__link {
-		font-size: 20px;
 		color: var(--title-text);
 		transition: all 0.3s ease-in-out;
 		&:hover{

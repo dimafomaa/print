@@ -1188,16 +1188,30 @@ tr:hover {
   background-color: rgba(44, 78, 70, 0.0901960784);
   border-radius: 100px 100px 0 0;
 }
+@media (max-width: 768px) {
+  .contact {
+    padding-bottom: 20px;
+    border-radius: 50px 50px 0 0;
+  }
+}
 .contact__inner {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0px;
-  justify-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+@media (max-width: 600px) {
+  .contact__inner {
+    justify-content: left;
+    gap: 0;
+  }
 }
 .contact__item {
   display: flex;
   align-items: center;
   gap: 20px;
+  max-width: 350px;
 }
 .contact__item svg {
   width: 50px;
@@ -1207,8 +1221,12 @@ tr:hover {
 .contact__item:hover svg {
   transform: rotate(5deg);
 }
+@media (max-width: 1050px) {
+  .contact__item {
+    margin-bottom: 20px;
+  }
+}
 .contact__link {
-  font-size: 20px;
   color: var(--title-text);
   transition: all 0.3s ease-in-out;
 }
