@@ -317,6 +317,7 @@ body.lock {
 		display: flex;
 		z-index: 2;
 		position: relative;
+
 		@media (max-width: 900px) {
 			flex-direction: column;
 			align-items: center;
@@ -405,9 +406,12 @@ body.lock {
 
 	&__image {
 		margin-left: 200px;
-		@media (max-width: 1400px){
-			margin-left: calc(75px + (200 - 75) * ((100vw - 900px) / (1400 - 900)));;
+
+		@media (max-width: 1400px) {
+			margin-left: calc(75px + (200 - 75) * ((100vw - 900px) / (1400 - 900)));
+			;
 		}
+
 		@media (max-width: 900px) {
 			display: none;
 		}
@@ -426,10 +430,12 @@ body.lock {
 		opacity: 0.9;
 		max-width: 450px;
 		box-shadow: 2px 2px 10px #00000065;
-		@media (max-width: 1060px){
+
+		@media (max-width: 1060px) {
 			margin-left: 0;
 			max-width: 450px;
 		}
+
 		@media (max-width: 900px) {
 			max-width: 100%;
 			width: 650px;
@@ -452,12 +458,8 @@ body.lock {
 // =====================================================
 
 .advantages {
-	padding: 100px 0;
+	padding: 50px 0;
 	background: #2c4e4617;
-
-	@media (max-width: 768px) {
-		padding: 50px 0;
-	}
 
 	&__row {
 		display: grid;
@@ -629,12 +631,9 @@ body.lock {
 // =============================================
 
 .gallery {
-	padding: 100px 0;
+	padding: 50px 0;
 	background: #2c4e4610;
 
-	@media (max-width: 768px) {
-		padding: 50px 0;
-	}
 
 	&__title {
 		@media (max-width: 768px) {
@@ -711,14 +710,10 @@ body.lock {
 // =======================================
 
 .order {
-	padding: 100px 0;
+	padding: 50px 0;
 	background: url('../img/background28.jpg');
 	background-position: center;
 	text-align: center;
-
-	@media (max-width: 768px) {
-		padding: 50px 0;
-	}
 
 	&__row {
 		display: grid;
@@ -807,12 +802,8 @@ body.lock {
 // =======================================
 
 .price {
-	padding: 100px 0;
+	padding: 50px 0;
 	background: #2c4e4607;
-
-	@media (max-width: 768px) {
-		padding: 50px 0;
-	}
 
 	&__title {
 		@media (max-width: 550px) {
@@ -1035,11 +1026,11 @@ tr:hover {
 // ==================================
 
 .work {
-	padding: 100px 0;
+	padding: 50px 0;
 	background: #2c4e4607;
 
-	@media (max-width: 768px) {
-		padding: 50px 0;
+	&__title {
+		margin-bottom: 80px;
 	}
 
 	&__inner {
@@ -1137,11 +1128,246 @@ tr:hover {
 
 
 // ====================================
+.forma {
+	background: #2c4e4636;
+	padding: 50px 0;
+
+}
+
+
+.form {
+	max-width: 750px;
+	margin: 0px auto;
+	color: #fff;
+
+	&__body {
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(51, 51, 51, 0.9) url("../img/loading.gif") center / 50px no-repeat;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.5s ease 0s;
+		}
+
+		&._sending::after {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&__item {
+		margin: 0px 0px 10px 0px;
+	}
+
+	&__label {
+		font-size: 18px;
+		display: block;
+		margin: 0px 0px 10px 0px;
+	}
+
+	&__input {
+		height: 40px;
+		padding: 0px 20px;
+		border-radius: 5px 5px 5px 0;
+		width: 100%;
+		font-size: 18px;
+		transition: all 0.3s ease 0s;
+	}
+
+	&__select {
+		box-shadow: 0 0 15px #7a956b;
+	}
+
+	&__button {
+		box-shadow: 0 0 15px red;
+	}
+}
+
+.options {
+	padding: 10px 0px 0px 0px;
+
+	&__item {
+		margin: 0px 0px 10px 0px;
+	}
+
+	&__input {
+		display: none;
+
+		&:checked+.options__label::after {
+			transform: scale(1);
+		}
+	}
+
+	&__label {
+		display: inline-flex;
+		font-size: 16px;
+		line-height: 140%;
+		align-items: center;
+		position: relative;
+		cursor: pointer;
+
+		&::before {
+			content: "";
+			align-self: flex-start;
+			flex: 0 0 24px;
+			height: 24px;
+			background-color: #fff;
+			border-radius: 50%;
+			margin: 0px 10px 0px 0px;
+		}
+
+		&::after {
+			transition: transform 0.5s ease 0s;
+			content: "";
+			position: absolute;
+			top: 4px;
+			left: 4px;
+			width: 16px;
+			height: 16px;
+			background-color: #7a956b;
+			border-radius: 50%;
+			transform: scale(0);
+		}
+	}
+
+	
+
+	
+}
+.checkbox {
+	&._error .checkbox__label::before {
+		box-shadow: 0 0 15px red;
+	}
+
+	&__input {
+		display: none;
+
+		&:checked+.checkbox__label::after {
+			transform: scale(1);
+		}
+	}
+
+	&__label {
+		font-size: 16px;
+		line-height: 140%;
+		display: inline-flex;
+		align-items: center;
+		position: relative;
+		cursor: pointer;
+
+		&::before {
+			content: "";
+			align-self: flex-start;
+			flex: 0 0 24px;
+			height: 24px;
+			background-color: #fff;
+			border-radius: 4px;
+			margin: 0px 10px 0px 0px;
+		}
+
+		&::after {
+			transition: transform 0.5s ease 0s;
+			content: "";
+			width: 16px;
+			height: 16px;
+			position: absolute;
+			top: 4px;
+			left: 4px;
+			background-color: #7a956b;
+			border-radius: 4px;
+			transform: scale(0);
+		}
+
+		& a {
+			color: #7a956b;
+		}
+	}
+
+	textarea.form__input {
+		min-height: 120px;
+		resize: vertical;
+		padding: 20px;
+	}
+}
+.file {
+	&__item {
+		position: relative;
+	}
+
+	&__input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		font-size: 0;
+		cursor: pointer;
+	}
+
+	&__button {
+		display: inline-flex;
+		min-height: 40px;
+		border-radius: 30px;
+		justify-content: center;
+		align-items: center;
+		background-color: #77608d;
+		padding: 0px 20px;
+	}
+
+	&__preview {
+		display: inline-block;
+		max-width: 100px;
+		padding: 10px 0px 0px 0px;
+
+		& img {
+			max-width: 100%;
+		}
+	}
+}
+.form__button {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 60px;
+	background-color: #7a956b;
+	color: #fff;
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 700;
+	cursor: pointer;
+	border-radius: 20px;
+	box-shadow: 0 5px 0 #161b13;
+	transition: background-color 0.5s ease 0s;
+	position: relative;
+	top: 0;
+
+	&:hover {
+		background-color: #4f6146;
+	}
+
+	&:active {
+		top: 3px;
+		box-shadow: 0 2px 0 #161b13;
+	}
+}
+
+// ====================================
 .question {
-	padding: 100px 0;
+	margin: 50px 0;
+	padding-top: 20px;
 
 	@media (max-width: 768px) {
-		padding: 50px 0;
+		margin: 50px 0;
 	}
 
 	&__title {
@@ -1260,7 +1486,8 @@ tr:hover {
 // ============================================
 
 .reviews {
-	padding-bottom: 100px;
+
+	padding: 50px 0;
 
 	&__slide {
 		padding-bottom: 50px;
@@ -1298,11 +1525,13 @@ tr:hover {
 	padding: 50px 0;
 	background-color: #2c4e4617;
 	border-radius: 100px 100px 0 0;
-	@media (max-width: 768px){
+
+	@media (max-width: 768px) {
 		padding-bottom: 20px;
 		border-radius: 50px 50px 0 0;
 
 	}
+
 	&__title {}
 
 	&__inner {
@@ -1311,7 +1540,8 @@ tr:hover {
 		justify-content: space-around;
 		flex-wrap: wrap;
 		gap: 20px;
-		@media (max-width: 600px){
+
+		@media (max-width: 600px) {
 			justify-content: left;
 			gap: 0;
 		}
@@ -1322,15 +1552,18 @@ tr:hover {
 		align-items: center;
 		gap: 20px;
 		max-width: 350px;
-		& svg{
+
+		& svg {
 			width: 50px;
 			height: 50px;
 			transition: all 0.3s ease-in-out;
 		}
-		&:hover svg{
+
+		&:hover svg {
 			transform: rotate(5deg);
 		}
-		@media (max-width: 1050px){
+
+		@media (max-width: 1050px) {
 			margin-bottom: 20px;
 		}
 	}
@@ -1338,7 +1571,8 @@ tr:hover {
 	&__link {
 		color: var(--title-text);
 		transition: all 0.3s ease-in-out;
-		&:hover{
+
+		&:hover {
 			transform: translateX(5px);
 		}
 	}
@@ -1350,9 +1584,65 @@ tr:hover {
 	padding: 10px 0;
 	border-top: 1px solid #2c4e462c;
 	text-align: center;
+	background-color: #cae2dc;
+
 	&__cooper {
 		font-size: 10px;
+		color: var(--title-text);
+
+		& a {
+			color: var(--title-text);
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				color: #fff;
+			}
+		}
 	}
+
 	&__link-bio {}
-  }
-  
+}
+
+// ==============================================
+
+.scroll-up {
+	position: fixed;
+	right: 30px;
+	bottom: -30%;
+	font-size: 22px;
+	z-index: 10;
+	transition: all 0.3s ease-in-out;
+	color: #fff;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease-in-out;
+	background-color: var(--basic);
+	border-radius: 20px 20px 20px 0;
+	box-shadow: 0 0 25px rgba(11, 109, 63, 0.5);
+	animation: scroll 1.5s ease-in-out alternate infinite;
+
+	@media (max-width: 768px) {
+		right: 10px;
+	}
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateY(5px);
+	}
+
+	100% {
+		transform: translateY(-5px);
+	}
+}
+
+.scroll-up:hover {
+	transform: translateY(-5px);
+}
+
+.show-scroll {
+	bottom: 30px;
+}

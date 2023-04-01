@@ -18,7 +18,7 @@
     <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#ffc40d">
     <meta name="theme-color" content="#ffffff">
-
+    <link rel="stylesheet" href="css/select.css">
     <link rel="stylesheet" href="css/style.css">
     
     <title>Pechatnik</title>
@@ -35,22 +35,22 @@
                     <nav class="menu">
                         <ul class="menu__list">
                             <li class="menu__item">
-                                <a href="#" class="menu__link">Сервіс</a>
+                                <a href="#service" class="menu__link">Сервіс</a>
                             </li>
                             <li class="menu__item">
-                                <a href="#" class="menu__link">Переваги</a>
+                                <a href="#advantages" class="menu__link">Переваги</a>
                             </li>
                             <li class="menu__item">
-                                <a href="#" class="menu__link">Роботи</a>
+                                <a href="#work" class="menu__link">Роботи</a>
                             </li>
                             <li class="menu__item">
-                                <a href="#" class="menu__link">Ціни</a>
+                                <a href="#price" class="menu__link">Ціни</a>
                             </li>
                             <li class="menu__item">
-                                <a href="#" class="menu__link">Q&A</a>
+                                <a href="#qa" class="menu__link">Q&A</a>
                             </li>
                             <li class="menu__item">
-                                <a href="#" class="menu__link">Контакти</a>
+                                <a href="#contact" class="menu__link">Контакти</a>
                             </li>
                         </ul>
                     </nav>
@@ -92,7 +92,7 @@
                 </div>
             </section>
 
-            <section class="advantages">
+            <section class="advantages" id="advantages">
                 <div class="container">
                     <h2 class="advantages__title title">5 причин замовити у нас картину по фото</h2>
                     <div class="advantages__row">
@@ -146,7 +146,7 @@
             </section>
             
 
-            <section class="enterprise">
+            <section class="enterprise" id="service">
                 <div class="container">
                     <h2 class="enterprise__title title">Холсти нашого підприємства</h2>
                     <div class="enterprise__row">
@@ -210,7 +210,7 @@
                 </div>
             </section>
 
-            <section class="gallery">
+            <section class="gallery" id="work">
                 <div class="container">
                     <h2 class="gallery__title title">Галерея фотографій на холсті</h2>
                     <div class="gallery__inner">
@@ -366,7 +366,7 @@
                 </div>
             </section>
 
-            <section class="price">
+            <section class="price" id="price">
                 <div class="container">
                     <h2 class="price__title title">Ціни на холсти</h2>
                     <div class="price__inner">
@@ -549,8 +549,69 @@
                     </div>
                 </div>
             </section>
+<!-- 
+            <section class="forma">
+                <div class="container">
+                    <h2 class="forma__title title">Форма замовлення</h2>
+                    <div class="form">
+                        <form action="#" id="form" class="form__body">
+                            <div class="form__item">
+                                <label for="formName" class="form__label">Имя*:</label>
+                                <input id="formName" type="text" name="name" class="form__input _req">
+                            </div>
+                            <div class="form__item">
+                                <label for="formEmail" class="form__label">E-mail*:</label>
+                                <input id="formEmail" type="text" name="email" class="form__input _req _email">
+                            </div>
+                            <div class="form__item">
+                                <div class="form__label">Левша или правша?</div>
+                                <div class="options">
+                                    <div class="options__item">
+                                        <input id="formRightHanded" checked type="radio" value="right" name="hand" class="options__input">
+                                        <label for="formRightHanded" class="options__label"><span>Правша</span></label>
+                                    </div>
+                                    <div class="options__item">
+                                        <input id="formLeftHanded" type="radio" value="left" name="hand" class="options__input">
+                                        <label for="formLeftHanded" class="options__label"><span>Левша</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form__item">
+                                <label for="formMessage" class="form__label">Сообщение:</label>
+                                <textarea name="message" id="formMessage" class="form__input"></textarea>
+                            </div>
+                            <div class="form__item">
+                                <div class="form__label">Возраст:</div>
+                                <select name="age" class="form__select">
+                                    <option value="от 18 до 25" selected>Молодой</option>
+                                    <option value="от 25 до 45">Старый</option>
+                                    <option value="от 45">Супер стар</option>
+                                </select>
+                            </div>
+                            <div class="form__item">
+                                <div class="form__label">Прикрепить фото</div>
+                                <div class="file">
+                                    <div class="file__item">
+                                        <input id="formImage" accept=".jpg, .png, .gif" type="file" name="image" class="file__input">
+                                        <div class="file__button">Выбрать</div>
+                                    </div>
+                                    <div id="formPreview" class="file__preview"></div>
+                                </div>
+                            </div>
+                            <div class="form__item">
+                                <div class="checkbox">
+                                    <input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox__input _req">
+                                    <label for="formAgreement" class="checkbox__label"><span>Я даю свое согласие на обработку персональных данных в соответствии с <a href="">Условиями</a>*</span></label>
+                                </div>
+                            </div>
+                            <button type="submit" class="form__button">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </section> -->
 
-            <section class="question">
+
+            <section class="question" id="qa">
                 <div class="question__container container">
                     <h2 class="question__title title">Популярні питання</h2>
                     <div class="question__inner">
@@ -672,7 +733,7 @@
                 </div>
             </section>
 
-            <section class="contact">
+            <section class="contact" id="contact">
                 <div class="container">
                     <h2 class="contact__title title">Контакти</h2>
                     <div class="contact__inner">
@@ -774,18 +835,25 @@
         <footer class="footer">
             <div class="container">
                 <div class="footer__cooper text">Copyright ©
-                    <a href="https://dimafomaa.online" class="footer__link-bio" target="_blank">dimafomaa</a>, 2023.
+                    <a href="https://dimafomaa.online" class="footer__link-bio" target="_blank">dimafomaa</a>, 2023. Всі права захищенні
                 </div>
             </div>
         </footer>
     
+        <a href="#" class="scroll-up" id="scroll-up">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
     </div>
 
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/b2c89e649a.js" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script src="js/select.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
+
+
 
