@@ -17,10 +17,36 @@ $(document).ready(function () {
         }
     });
 
+    $('.question__block--title').click(function (event) {
+        if ($('.question__block').hasClass('one')) {
+            $('.question__block--title').not($(this)).removeClass('active');
+            $('.question__block--text').not($(this).next()).slideUp(300);
+
+        }
+        $(this).toggleClass('active').next().slideToggle(300);
+
+    });
+
 });
 
-const swiper = new Swiper('.gallery__swiper', {
-    slidesPerView: 5,
+const swiper = new Swiper('.reviews__swiper', {
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    slidesPerGrou:1,
+    slidesPerView: 3,
     spaceBetween: 30,
-    slidesPerColumn: 3,   
+    autoHeight: true,
+    breakpoints:{
+        320:{
+            slidesPerView: 1, 
+        },
+        600:{
+            slidesPerView: 2, 
+        },
+        900:{
+            slidesPerView: 3, 
+        },
+    }
 });
