@@ -1186,6 +1186,7 @@ tr:hover {
 .contact {
   padding: 50px 0;
   background-color: rgba(44, 78, 70, 0.0901960784);
+  border-radius: 100px 100px 0 0;
 }
 .contact__inner {
   display: grid;
