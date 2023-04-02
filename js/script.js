@@ -1,111 +1,70 @@
-"use strict"
+$(document).ready(function () {
+    
 
-document.addEventListener('DOMContentLoaded', function () {
-	const form = document.getElementById('form');
-	form.addEventListener('submit', formSend);
+    $('input[type="tel"]').inputmask("+38 (999) 999-99-99");
 
-	async function formSend(e) {
-		e.preventDefault();
+    $('form').on('submit', function (e) {
+        e.preventDefault(); // предотвращение стандартного поведения формы
+        var form = $(this);
 
-		let error = formValidate(form);
-
-		let formData = new FormData(form);
-		formData.append('image', formImage.files[0]);
-
-		if (error === 0) {
-			form.classList.add('_sending');
-			let response = await fetch('sendmail.php', {
-				method: 'POST',
-				body: formData
-			});
-			if (response.ok) {
-				let result = await response.json();
-				alert(result.message);
-				formPreview.innerHTML = '';
-				form.reset();
-				form.classList.remove('_sending');
-			} else {
-				alert("Ошибка");
-				form.classList.remove('_sending');
-			}
-		} else {
-			alert('Заполните обязательные поля');
-		}
-
-	}
+        let formData = new FormData(form);
+        formData.append('image', formImage.files[0]);
+        // отправка формы с помощью AJAX
+        $.ajax({
+            url: 'send-mail.php',
+            type: 'POST',
+            data: form.serialize(),
+            success: function (data) {
+                form[0].reset(); // очистка формы
+                // Открываем модальное окно благодарности после успешной отправки формы
+                const thankPopup = document.getElementById('modal-thank');
+                popupOpen(thankPopup);
+            }
+        });
+    });
 
 
-	function formValidate(form) {
-		let error = 0;
-		let formReq = document.querySelectorAll('._req');
+    // закрытие модального окна при нажатии на кнопку закрытия
 
-		for (let index = 0; index < formReq.length; index++) {
-			const input = formReq[index];
-			formRemoveError(input);
+    
+    //Получаем инпут file в переменную
+    const formImage = document.getElementById('formImage');
+    //Получаем див для превью в переменную
+    const formPreview = document.getElementById('formPreview');
 
-			if (input.classList.contains('_email')) {
-				if (emailTest(input)) {
-					formAddError(input);
-					error++;
-				}
-			} else if (input.getAttribute("type") === "checkbox" && input.checked === false) {
-				formAddError(input);
-				error++;
-			} else {
-				if (input.value === '') {
-					formAddError(input);
-					error++;
-				}
-			}
-		}
-		return error;
-	}
-	function formAddError(input) {
-		input.parentElement.classList.add('_error');
-		input.classList.add('_error');
-	}
-	function formRemoveError(input) {
-		input.parentElement.classList.remove('_error');
-		input.classList.remove('_error');
-	}
-	//Функция теста email
-	function emailTest(input) {
-		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-	}
+    //Слушаем изменения в инпуте file
+    formImage.addEventListener('change', () => {
+        uploadFile(formImage.files[0]);
+    });
 
-	//Получаем инпут file в переменную
-	const formImage = document.getElementById('formImage');
-	//Получаем див для превью в переменную
-	const formPreview = document.getElementById('formPreview');
+    function uploadFile(file) {
+        // провераяем тип файла
+        if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
+            alert('Разрешены только изображения.');
+            formImage.value = '';
+            return;
+        }
+        // проверим размер файла (<2 Мб)
+        if (file.size > 20 * 1024 * 1024) {
+            alert('Файл должен быть менее 20 МБ.');
+            return;
+        }
 
-	//Слушаем изменения в инпуте file
-	formImage.addEventListener('change', () => {
-		uploadFile(formImage.files[0]);
-	});
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            formPreview.innerHTML = `<img src="${e.target.result}" alt="Фото">`;
+        };
+        reader.onerror = function (e) {
+            alert('Ошибка');
+        };
+        reader.readAsDataURL(file);
+    }
 
-	function uploadFile(file) {
-		// провераяем тип файла
-		if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
-			alert('Разрешены только изображения.');
-			formImage.value = '';
-			return;
-		}
-		// проверим размер файла (<2 Мб)
-		if (file.size > 2 * 1024 * 1024) {
-			alert('Файл должен быть менее 2 МБ.');
-			return;
-		}
 
-		var reader = new FileReader();
-		reader.onload = function (e) {
-			formPreview.innerHTML = `<img src="${e.target.result}" alt="Фото">`;
-		};
-		reader.onerror = function (e) {
-			alert('Ошибка');
-		};
-		reader.readAsDataURL(file);
-	}
 });
+
+
+
 $(document).ready(function () {
     $('.header__burger').click(function (event) {
         $('.header__burger, .menu, .header__btn').toggleClass('active');
@@ -142,26 +101,67 @@ const swiper = new Swiper('.reviews__swiper', {
         el: '.swiper-pagination',
         clickable: true,
     },
-    slidesPerGrou:1,
+    slidesPerGrou: 1,
     slidesPerView: 3,
     spaceBetween: 30,
     autoHeight: true,
-    breakpoints:{
-        320:{
-            slidesPerView: 1, 
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
         },
-        600:{
-            slidesPerView: 2, 
+        600: {
+            slidesPerView: 2,
         },
-        900:{
-            slidesPerView: 3, 
+        900: {
+            slidesPerView: 3,
         },
     }
 });
 
 const scrollUp = () => {
-	const scrollUp = document.getElementById('scroll-up')
-	this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
-		: scrollUp.classList.remove('show-scroll')
+    const scrollUp = document.getElementById('scroll-up')
+    this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+        : scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
+
+
+// Получаем элементы формы
+const sizeSelect = document.getElementById('size');
+const styleSelect = document.getElementById('style');
+const stretchSelect = document.querySelector('select[name="stretch"]');
+const materialSelect = document.querySelector('select[name="material"]');
+const packagingCheckbox = document.getElementById('packaging');
+const urgentCheckbox = document.getElementById('urgent');
+
+// Получаем элемент, где будет отображаться цена
+const priceElement = document.getElementById('price');
+
+// Функция для обновления цены
+function updatePrice() {
+  // Получаем значения выбранных элементов формы
+  const sizeValue = sizeSelect.options[sizeSelect.selectedIndex].value;
+  const sizePrice = parseInt(sizeSelect.options[sizeSelect.selectedIndex].dataset.price);
+  const stylePrice = parseInt(styleSelect.options[styleSelect.selectedIndex].dataset.price || '0');
+  const stretchPrice = parseInt(stretchSelect.options[stretchSelect.selectedIndex].dataset.price || '0');
+  const materialPrice = parseInt(materialSelect.options[materialSelect.selectedIndex].dataset.price || '0');
+  const packagingPrice = packagingCheckbox.checked ? 100 : 0;
+  const urgentPrice = urgentCheckbox.checked ? 100 : 0;
+
+  // Считаем итоговую цену
+  const totalPrice = sizePrice + stylePrice + stretchPrice + materialPrice + packagingPrice + urgentPrice;
+
+  // Обновляем текст элемента с ценой
+  priceElement.innerText = `${totalPrice} грн`;
+}
+
+// Вызываем функцию для первоначальной установки цены
+updatePrice();
+
+// Назначаем обработчики событий для изменения элементов формы
+sizeSelect.addEventListener('change', updatePrice);
+styleSelect.addEventListener('change', updatePrice);
+stretchSelect.addEventListener('change', updatePrice);
+materialSelect.addEventListener('change', updatePrice);
+packagingCheckbox.addEventListener('change', updatePrice);
+urgentCheckbox.addEventListener('change', updatePrice);
