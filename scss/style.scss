@@ -1129,17 +1129,32 @@ tr:hover {
 
 // ====================================
 .forma {
-	background: #2c4e4636;
 	padding: 50px 0;
+	@media (max-width: 550px){
+		background-color: #2c4e463e;
 
+	}
+
+	&__title{
+		margin-bottom: 20px;
+	}
 }
 
 
 .form {
-	max-width: 750px;
-	margin: 0px auto;
-	color: #fff;
+	max-width: 1000px;
+	color: var(--title-text);
+	background-color: #2c4e463e;
+	padding: 30px;
+	border-radius: 50px 50px 50px 0;
+	@media (max-width: 768px){
+		border-radius: 20px 20px 20px 0;
 
+	}
+	@media (max-width: 550px){
+		padding: 20px 0;
+		background-color: transparent;
+	}
 	&__body {
 		position: relative;
 
@@ -1163,7 +1178,12 @@ tr:hover {
 	}
 
 	&__item {
-		margin: 0px 0px 10px 0px;
+		margin: 0px 0px 20px 0px;
+
+	}
+
+	&__r {
+		color: red;
 	}
 
 	&__label {
@@ -1173,7 +1193,7 @@ tr:hover {
 	}
 
 	&__input {
-		height: 40px;
+		height: 51px;
 		padding: 0px 20px;
 		border-radius: 5px 5px 5px 0;
 		width: 100%;
@@ -1182,12 +1202,50 @@ tr:hover {
 	}
 
 	&__select {
-		box-shadow: 0 0 15px #7a956b;
+		box-shadow: 0 0 15px var(--basic);
 	}
 
-	&__button {
-		box-shadow: 0 0 15px red;
+	&__check {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@media (max-width: 550px){
+			display: block;
+		}
 	}
+
+	&__price {
+		font-size: 32px;
+
+	}
+
+	&__item-top {
+		@media (max-width: 950px) {
+			display: none;
+		}
+	}
+
+	&__item-down {
+		display: none;
+
+		@media (max-width: 950px) {
+			display: block;
+		}
+	}
+}
+
+.forma__items {
+	display: flex;
+	justify-content: space-around;
+	gap: 50px;
+
+	@media (max-width: 950px) {
+		display: block;
+	}
+}
+
+.forma__block {
+	width: 100%;
 }
 
 .options {
@@ -1231,16 +1289,17 @@ tr:hover {
 			left: 4px;
 			width: 16px;
 			height: 16px;
-			background-color: #7a956b;
+			background-color: var(--basic);
 			border-radius: 50%;
 			transform: scale(0);
 		}
 	}
 
-	
 
-	
+
+
 }
+
 .checkbox {
 	&._error .checkbox__label::before {
 		box-shadow: 0 0 15px red;
@@ -1261,7 +1320,9 @@ tr:hover {
 		align-items: center;
 		position: relative;
 		cursor: pointer;
-
+		@media (max-width: 550px){
+			width: 100%;
+		}
 		&::before {
 			content: "";
 			align-self: flex-start;
@@ -1280,13 +1341,13 @@ tr:hover {
 			position: absolute;
 			top: 4px;
 			left: 4px;
-			background-color: #7a956b;
+			background-color: var(--basic);
 			border-radius: 4px;
 			transform: scale(0);
 		}
 
 		& a {
-			color: #7a956b;
+			color: var(--basic);
 		}
 	}
 
@@ -1296,7 +1357,12 @@ tr:hover {
 		padding: 20px;
 	}
 }
+
 .file {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
 	&__item {
 		position: relative;
 	}
@@ -1318,8 +1384,9 @@ tr:hover {
 		border-radius: 30px;
 		justify-content: center;
 		align-items: center;
-		background-color: #77608d;
+		background-color: #2c4e46;
 		padding: 0px 20px;
+		color: #fff;
 	}
 
 	&__preview {
@@ -1332,33 +1399,16 @@ tr:hover {
 		}
 	}
 }
+
 .form__button {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 60px;
-	background-color: #7a956b;
-	color: #fff;
+	margin-top: 30px;
+	text-align: center;
+}
+
+.form__btn {
+	width: 300px;
+	padding: 20px;
 	font-size: 18px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-weight: 700;
-	cursor: pointer;
-	border-radius: 20px;
-	box-shadow: 0 5px 0 #161b13;
-	transition: background-color 0.5s ease 0s;
-	position: relative;
-	top: 0;
-
-	&:hover {
-		background-color: #4f6146;
-	}
-
-	&:active {
-		top: 3px;
-		box-shadow: 0 2px 0 #161b13;
-	}
 }
 
 // ====================================

@@ -549,66 +549,108 @@
                     </div>
                 </div>
             </section>
-<!-- 
+
             <section class="forma">
                 <div class="container">
                     <h2 class="forma__title title">Форма замовлення</h2>
                     <div class="form">
                         <form action="#" id="form" class="form__body">
-                            <div class="form__item">
-                                <label for="formName" class="form__label">Имя*:</label>
-                                <input id="formName" type="text" name="name" class="form__input _req">
-                            </div>
-                            <div class="form__item">
-                                <label for="formEmail" class="form__label">E-mail*:</label>
-                                <input id="formEmail" type="text" name="email" class="form__input _req _email">
-                            </div>
-                            <div class="form__item">
-                                <div class="form__label">Левша или правша?</div>
-                                <div class="options">
-                                    <div class="options__item">
-                                        <input id="formRightHanded" checked type="radio" value="right" name="hand" class="options__input">
-                                        <label for="formRightHanded" class="options__label"><span>Правша</span></label>
+                            <div class="forma__items">
+                                <div class="forma__block">
+                                    <div class="form__item">
+                                        <label for="formName" class="form__label">ПІБ<span class="form__r">*</span>:</label>
+                                        <input id="formName" type="text" name="name" class="form__input _req">
                                     </div>
-                                    <div class="options__item">
-                                        <input id="formLeftHanded" type="radio" value="left" name="hand" class="options__input">
-                                        <label for="formLeftHanded" class="options__label"><span>Левша</span></label>
+                                    <div class="form__item">
+                                        <label for="formEmail" class="form__label">Телефон<span class="form__r">*</span>:</label>
+                                        <input id="formEmail" type="tel" name="phone" class="form__input _req _phone">
+                                    </div>
+                                    <div class="form__item">
+                                        <label for="formEmail" class="form__label">Адреса<span class="form__r">*</span>:</label>
+                                        <input id="formEmail" type="text" name="phone" class="form__input _req">
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__label">Додати фото</div>
+                                        <div class="file">
+                                            <div class="file__item">
+                                                <input id="formImage" accept=".jpg, .tif, .psd" type="file" name="image" class="file__input">
+                                                <div class="file__button">Обрати</div>
+                                            </div>
+                                            <div id="formPreview" class="file__preview"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form__item-top">
+                                        <div class="form__price"><span>260 грн</span></div>
+                                    </div>
+                                </div>
+                                <div class="forma__block">
+                                    <div class="form__item">
+                                        <div class="form__label">Оберіть розмір:</div>
+                                        <select name="size" class="form__select">
+                                            <option value="20*20 см" selected>20*20 см</option>
+                                            <option value="20*30 см">20*30 см</option>
+                                            <option value="30*40 см">30*40 см</option>
+                                            <option value="40*50 см">40*50 см</option>
+                                            <option value="50*50 см">50*50 см</option>
+                                            <option value="40*60 см">40*60 см</option>
+                                            <option value="50*70 см">50*70 см</option>
+                                            <option value="60*60 см">60*60 см</option>
+                                            <option value="60*70 см">60*70 см</option>
+                                            <option value="60*80 см">60*80 см</option>
+                                            <option value="60*90 см">60*90 см</option>
+                                        </select>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__label">Оберіть стиль:</div>
+                                        <select name="style" class="form__select">
+                                            <option value="Звичайне фото" selected>Звичайне фото</option>
+                                            <option value="Dream Art">Dream Art(+100 грн)</option>
+                                            <option value="Коллаж">Коллаж(+100 грн)</option>
+                                            <option value="Love is">Love is(+100 грн)</option>
+                                            <option value="Вектор">Вектор(+100 грн)</option>
+                                            <option value="Pop Art">Pop Art(+100 грн)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__label">Вид натяжки полотна:</div>
+                                        <select name="stretch" class="form__select">
+                                            <option value="Звичайне фото" selected>Звичайна натяжка</option>
+                                            <option value="Dream Art">Галерейна натяжка(+100 грн)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__label">Матеріал полотна:</div>
+                                        <select name="material" class="form__select">
+                                            <option value="Звичайне фото" selected>Звичайний поліестер</option>
+                                            <option value="Dream Art">Натуральне льняне(+100 грн)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form__check">
+                                        <div class="form__item">
+                                            <div class="checkbox">
+                                                <input id="packaging" type="checkbox" name="packaging" class="checkbox__input">
+                                                <label for="packaging" class="checkbox__label"><span>Полакувати (+100 грн)</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="form__item">
+                                            <div class="checkbox">
+                                                <input id="urgent" type="checkbox" name="packaging" class="checkbox__input">
+                                                <label for="urgent" class="checkbox__label"><span>Термінове замовлення? (+100 грн)</span></label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form__item">
-                                <label for="formMessage" class="form__label">Сообщение:</label>
-                                <textarea name="message" id="formMessage" class="form__input"></textarea>
+                            <div class="form__item-down">
+                                <div class="form__price"><span>260 грн</span></div>
                             </div>
-                            <div class="form__item">
-                                <div class="form__label">Возраст:</div>
-                                <select name="age" class="form__select">
-                                    <option value="от 18 до 25" selected>Молодой</option>
-                                    <option value="от 25 до 45">Старый</option>
-                                    <option value="от 45">Супер стар</option>
-                                </select>
+                            <div class="form__button">
+                                <button type="submit" class="form__btn btn">Замовити холст</button>
                             </div>
-                            <div class="form__item">
-                                <div class="form__label">Прикрепить фото</div>
-                                <div class="file">
-                                    <div class="file__item">
-                                        <input id="formImage" accept=".jpg, .png, .gif" type="file" name="image" class="file__input">
-                                        <div class="file__button">Выбрать</div>
-                                    </div>
-                                    <div id="formPreview" class="file__preview"></div>
-                                </div>
-                            </div>
-                            <div class="form__item">
-                                <div class="checkbox">
-                                    <input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox__input _req">
-                                    <label for="formAgreement" class="checkbox__label"><span>Я даю свое согласие на обработку персональных данных в соответствии с <a href="">Условиями</a>*</span></label>
-                                </div>
-                            </div>
-                            <button type="submit" class="form__button">Отправить</button>
                         </form>
                     </div>
                 </div>
-            </section> -->
+            </section>
 
 
             <section class="question" id="qa">
