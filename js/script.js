@@ -198,13 +198,29 @@ $(document).ready(function () {
         $('body').removeClass('lock');
     });
 
-    $(".gallery__wrapper").magnificPopup({
-        delegate: "a",
-        type: "image",
-        gallery: {
-            enabled: true
-        }
+    
+    $(document).ready(function() {
+        $('.gallery__wrapper').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            closeOnContentClick: false,
+            closeBtnInside: false,
+            mainClass: 'mfp-with-zoom mfp-img-mobile',
+          
+            gallery: {
+                enabled: true
+            },
+            zoom: {
+                enabled: true,
+                duration: 300,
+                opener: function(element) {
+                    return element.find('img');
+                }
+            }
+            
+        });
     });
+
 
     $('.question__block--title').click(function (event) {
         if ($('.question__block').hasClass('one')) {
