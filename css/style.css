@@ -654,6 +654,10 @@ body.lock {
   cursor: pointer;
 }
 
+.mfp-counter {
+  display: none;
+}
+
 .order {
   padding: 50px 0;
   background: url("../img/background28.jpg");
