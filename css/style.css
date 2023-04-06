@@ -981,6 +981,7 @@ tr:hover {
 }
 .work__item {
   position: relative;
+  margin: 0 auto;
 }
 .work__item::before {
   content: "";
@@ -1026,15 +1027,11 @@ tr:hover {
 }
 .work__image {
   margin-bottom: 20px;
+  max-width: 350px;
 }
 .work__img {
   box-shadow: rgba(27, 27, 29, 0.1843137255) 0 0 5px;
-}
-.work__img-one {
-  border-radius: 50px 0px 0px 0;
-}
-.work__img-two {
-  border-radius: 0px 0px 50px 0;
+  border-radius: 50px 0px 50px 0;
 }
 .work__text {
   font-weight: 700;
@@ -1053,11 +1050,20 @@ tr:hover {
 .forma__title {
   margin-bottom: 20px;
 }
+.forma__image {
+  flex: 0 1 40%;
+}
 
 .form {
-  max-width: 800px;
+  max-width: 750px;
   color: var(--title-text);
-  background-color: rgba(44, 78, 70, 0.2431372549);
+  /* From https://css.glass */
+  background: rgba(44, 78, 70, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(44, 78, 70, 0.09);
   padding: 30px;
   border-radius: 50px 50px 50px 0;
 }
@@ -1434,7 +1440,7 @@ tr:hover {
 @media (max-width: 768px) {
   .contact {
     padding-bottom: 20px;
-    border-radius: 50px 50px 0 0;
+    border-radius: 20px 20px 0 0;
   }
 }
 .contact__inner {

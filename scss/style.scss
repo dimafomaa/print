@@ -1049,7 +1049,7 @@ tr:hover {
 
 	&__item {
 		position: relative;
-
+		margin: 0 auto;
 		&::before {
 			content: '';
 			position: absolute;
@@ -1100,21 +1100,12 @@ tr:hover {
 
 	&__image {
 		margin-bottom: 20px;
-
+		max-width: 350px;
 	}
 
 	&__img {
 		box-shadow: #1b1b1d2f 0 0 5px;
-
-	}
-
-	&__img-one {
-		border-radius: 50px 0px 0px 0;
-	}
-
-	&__img-two {
-		border-radius: 0px 0px 50px 0;
-
+		border-radius: 50px 0px 50px 0;
 	}
 
 	&__text {
@@ -1132,17 +1123,31 @@ tr:hover {
 		background-color: #2c4e463e;
 
 	}
-
+	// &__inner{
+	// 	display: flex;
+	// 	align-items: center;
+	// 	justify-content: space-between;
+	// }
 	&__title{
 		margin-bottom: 20px;
+	}
+	&__image{
+		flex: 0 1 40%;
 	}
 }
 
 
 .form {
-	max-width: 800px;
+
+	max-width: 750px;
 	color: var(--title-text);
-	background-color: #2c4e463e;
+	/* From https://css.glass */
+background: rgba(44, 78, 70, 0.25);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border: 1px solid rgba(44, 78, 70, 0.09);
 	padding: 30px;
 	border-radius: 50px 50px 50px 0;
 	@media (max-width: 768px){
@@ -1577,7 +1582,7 @@ tr:hover {
 
 	@media (max-width: 768px) {
 		padding-bottom: 20px;
-		border-radius: 50px 50px 0 0;
+		border-radius: 20px 20px 0 0;
 
 	}
 
