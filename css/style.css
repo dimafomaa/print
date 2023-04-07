@@ -1420,6 +1420,10 @@ tr:hover {
 .reviews__inner {
   position: relative;
 }
+.reviews__wrapper {
+  display: flex;
+  align-items: center;
+}
 .reviews__swiper {
   max-width: 1000px;
   margin: 0 auto;

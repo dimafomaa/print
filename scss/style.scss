@@ -1569,7 +1569,10 @@ tr:hover {
 		position: relative;
 
 	}
-
+	&__wrapper{
+		display: flex;
+		align-items: center;
+	}
 	&__swiper {
 		max-width: 1000px;
 		margin: 0 auto;
