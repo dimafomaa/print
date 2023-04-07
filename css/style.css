@@ -1481,6 +1481,10 @@ tr:hover {
   background-color: #2c4e46;
 }
 
+.swiper-autoheight .swiper-wrapper {
+  align-items: center;
+}
+
 .contact {
   padding: 50px 0;
   background-color: rgba(44, 78, 70, 0.0901960784);
