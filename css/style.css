@@ -1438,6 +1438,7 @@ tr:hover {
   display: flex;
 }
 .reviews__img {
+width:300px;
   border-radius: 20px 0px 20px 0;
   -o-object-fit: cover;
      object-fit: cover;
