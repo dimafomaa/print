@@ -1078,6 +1078,9 @@ tr:hover {
     max-width: 100%;
     border-radius: 50px 50px 50px 0;
   }
+  .forma__img{
+    display: none;
+  }
 }
 @media (max-width: 768px) {
   .form {
