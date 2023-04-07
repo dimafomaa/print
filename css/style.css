@@ -1057,13 +1057,7 @@ tr:hover {
 .form {
   max-width: 750px;
   color: var(--title-text);
-  /* From https://css.glass */
-  background: rgba(44, 78, 70, 0.25);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(44, 78, 70, 0.09);
+  background: rgba(44, 78, 70, 0.2431372549);
   padding: 30px;
   border-radius: 50px 50px 50px 0;
 }
