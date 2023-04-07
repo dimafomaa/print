@@ -1087,7 +1087,6 @@ tr:hover {
 @media (max-width: 550px) {
   .form {
     padding: 20px 0;
-    background-color: transparent;
   }
 }
 .form__body {
