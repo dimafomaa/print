@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
 
     $('input[type="tel"]').inputmask("+38 (999) 999-99-99");
 
@@ -26,7 +26,7 @@ $(document).ready(function () {
 
     // закрытие модального окна при нажатии на кнопку закрытия
 
-    
+
     //Получаем инпут file в переменную
     const formImage = document.getElementById('formImage');
     //Получаем див для превью в переменную
@@ -75,26 +75,47 @@ $(document).ready(function () {
         $('body').removeClass('lock');
     });
 
-    
-    $(document).ready(function() {
+
+    $(document).ready(function () {
         $('.gallery__wrapper').magnificPopup({
             delegate: 'a',
             type: 'image',
             closeOnContentClick: false,
             closeBtnInside: false,
             mainClass: 'mfp-with-zoom mfp-img-mobile',
-          
+
             gallery: {
                 enabled: true
             },
             zoom: {
                 enabled: true,
                 duration: 300,
-                opener: function(element) {
+                opener: function (element) {
                     return element.find('img');
                 }
             }
-            
+
+        });
+    });
+    $(document).ready(function () {
+        $('.reviews__wrapper').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            closeOnContentClick: false,
+            closeBtnInside: false,
+            mainClass: 'mfp-with-zoom mfp-img-mobile',
+
+            gallery: {
+                enabled: true
+            },
+            zoom: {
+                enabled: true,
+                duration: 300,
+                opener: function (element) {
+                    return element.find('img');
+                }
+            }
+
         });
     });
 
@@ -116,16 +137,23 @@ const swiper = new Swiper('.reviews__swiper', {
         el: '.swiper-pagination',
         clickable: true,
     },
-    slidesPerGrou: 1,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    slidesPerGroup: 1,
     slidesPerView: 3,
     spaceBetween: 30,
     autoHeight: true,
+    loop: true,
     breakpoints: {
         320: {
             slidesPerView: 1,
+            
         },
         600: {
             slidesPerView: 2,
+
         },
         900: {
             slidesPerView: 3,
@@ -154,20 +182,20 @@ const priceElement = document.getElementById('price');
 
 // Функция для обновления цены
 function updatePrice() {
-  // Получаем значения выбранных элементов формы
-  const sizeValue = sizeSelect.options[sizeSelect.selectedIndex].value;
-  const sizePrice = parseInt(sizeSelect.options[sizeSelect.selectedIndex].dataset.price);
-  const stylePrice = parseInt(styleSelect.options[styleSelect.selectedIndex].dataset.price || '0');
-  const stretchPrice = parseInt(stretchSelect.options[stretchSelect.selectedIndex].dataset.price || '0');
-  const materialPrice = parseInt(materialSelect.options[materialSelect.selectedIndex].dataset.price || '0');
-  const packagingPrice = packagingCheckbox.checked ? 70 : 0;
-  const urgentPrice = urgentCheckbox.checked ? 100 : 0;
+    // Получаем значения выбранных элементов формы
+    const sizeValue = sizeSelect.options[sizeSelect.selectedIndex].value;
+    const sizePrice = parseInt(sizeSelect.options[sizeSelect.selectedIndex].dataset.price);
+    const stylePrice = parseInt(styleSelect.options[styleSelect.selectedIndex].dataset.price || '0');
+    const stretchPrice = parseInt(stretchSelect.options[stretchSelect.selectedIndex].dataset.price || '0');
+    const materialPrice = parseInt(materialSelect.options[materialSelect.selectedIndex].dataset.price || '0');
+    const packagingPrice = packagingCheckbox.checked ? 70 : 0;
+    const urgentPrice = urgentCheckbox.checked ? 100 : 0;
 
-  // Считаем итоговую цену
-  const totalPrice = sizePrice + stylePrice + stretchPrice + materialPrice + packagingPrice + urgentPrice;
+    // Считаем итоговую цену
+    const totalPrice = sizePrice + stylePrice + stretchPrice + materialPrice + packagingPrice + urgentPrice;
 
-  // Обновляем текст элемента с ценой
-  priceElement.innerText = `${totalPrice} грн`;
+    // Обновляем текст элемента с ценой
+    priceElement.innerText = `${totalPrice} грн`;
 }
 
 // Вызываем функцию для первоначальной установки цены

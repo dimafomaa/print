@@ -701,6 +701,7 @@ body.lock {
 .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
 	cursor: pointer;
 }
+
 .mfp-counter {
 	display: none;
 }
@@ -1050,6 +1051,7 @@ tr:hover {
 	&__item {
 		position: relative;
 		margin: 0 auto;
+
 		&::before {
 			content: '';
 			position: absolute;
@@ -1119,39 +1121,62 @@ tr:hover {
 // ====================================
 .forma {
 	padding: 50px 0;
-	@media (max-width: 550px){
+
+	@media (max-width: 550px) {
 		background-color: #2c4e463e;
 
 	}
-	// &__inner{
-	// 	display: flex;
-	// 	align-items: center;
-	// 	justify-content: space-between;
-	// }
-	&__title{
+
+	&__inner{
+		// display: flex;
+		// align-items: center;
+		// justify-content: center;
+		position: relative;
+		// background-image: url('../img/bg-form.jpg');
+		// background-repeat: no-repeat;
+		// background-position: right;
+		// background-size: contain;
+		// border-radius: 0px 50px 50px 0;
+
+	}
+	&__title {
 		margin-bottom: 20px;
 	}
-	&__image{
-		flex: 0 1 40%;
+	&__img{
+		object-fit: contain;
+		border-radius: 0px 50px 50px 0;
+		height: 770px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: -1;
 	}
 }
 
 
 .form {
 
-	max-width: 750px;
+	max-width: 755px;
 	color: var(--title-text);
-	background: rgba(44, 78, 70, 0.2431372549);;
+	background: rgb(206, 211, 210);
 	padding: 30px;
-	border-radius: 50px 50px 50px 0;
-	@media (max-width: 768px){
+	border-radius: 50px 0px 0 50px;
+
+	@media (max-width: 950px){
+		max-width: 100%;
+		border-radius: 50px 50px 50px 0;
+
+	}
+	@media (max-width: 768px) {
 		border-radius: 20px 20px 20px 0;
 
 	}
-	@media (max-width: 550px){
+
+	@media (max-width: 550px) {
 		padding: 20px 0;
 		background-color: transparent;
 	}
+
 	&__body {
 		position: relative;
 
@@ -1225,7 +1250,7 @@ tr:hover {
 	}
 
 	&__item-top {
-		 margin: 20px 0;
+		margin: 20px 0;
 	}
 }
 
@@ -1315,9 +1340,11 @@ tr:hover {
 		align-items: center;
 		position: relative;
 		cursor: pointer;
-		@media (max-width: 550px){
+
+		@media (max-width: 550px) {
 			width: 100%;
 		}
+
 		&::before {
 			content: "";
 			align-self: flex-start;
@@ -1404,7 +1431,8 @@ tr:hover {
 	width: 300px;
 	padding: 20px;
 	font-size: 18px;
-	@media (max-width: 550px){
+
+	@media (max-width: 550px) {
 		width: 100%;
 	}
 }
@@ -1537,30 +1565,68 @@ tr:hover {
 
 	padding: 50px 0;
 
+	&__inner {
+		position: relative;
+
+	}
+
+	&__swiper {
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
 	&__slide {
 		padding-bottom: 50px;
 
 	}
 
+	&__image {
+		max-height: 300px;
+		display: flex;
+
+	}
+
 	&__img {
 		border-radius: 20px 0px 20px 0;
+		object-fit: cover;
+	}
 
+	&__button {
+		display: flex;
+		justify-content: space-between;
+
+		
 	}
 }
 
+
+
 .swiper-button-prev::after,
 .swiper-button-next::after {
-	font-size: 0px;
+	font-size: 34px;
+	color: #2c4e46;
+	@media (max-width: 450px){
+		display: none;
+	}
 }
 
-.reviews__swiper .swiper-pagination {
+.swiper-button-prev,
+.swiper-button-next {
+	position: absolute;
+	@media (max-width: 1150px){
+		position: static;
+	}
+}
+
+
+.swiper-pagination {
 	position: absolute;
 	bottom: 0px;
 }
 
-.reviews__swiper .swiper-pagination-bullet {
-	width: 20px;
-	height: 20px;
+.swiper-pagination-bullet {
+	width: 15px;
+	height: 15px;
 	line-height: 20px;
 	font-size: 14px;
 	background-color: #2c4e46;
