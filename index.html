@@ -524,15 +524,15 @@
                                     <div class="forma__block">
                                         <div class="form__item">
                                             <label for="formName" class="form__label">ПІБ<span class="form__r">*</span>:</label>
-                                            <input id="formName" type="text" name="name" class="form__input">
+                                            <input id="formName" type="text" name="name" class="form__input" required>
                                         </div>
                                         <div class="form__item">
                                             <label for="formPhone" class="form__label">Телефон<span class="form__r">*</span>:</label>
-                                            <input id="formPhone" type="tel" name="phone" class="form__input">
+                                            <input id="formPhone" type="tel" name="tel" class="form__input" required>
                                         </div>
                                         <div class="form__item">
                                             <label for="formAdress" class="form__label">Адреса<span class="form__r">*</span>:</label>
-                                            <input id="formAdress" type="text" name="adress" class="form__input">
+                                            <input id="formAdress" type="text" name="adress" class="form__input" required>
                                         </div>
                                         <div class="form__item">
                                             <div class="form__label">Додати фото</div>
@@ -550,62 +550,62 @@
                                         <div class="form__item">
                                             <div class="form__label">Оберіть розмір:</div>
                                             <select name="size" class="form__select js-select" id="size">
-                                                <option value="20*20 см" data-price="240" selected>20*20 см</option>
-                                                <option value="20*30 см" data-price="280">20*30 см</option>
-                                                <option value="30*40 см" data-price="340">30*40 см</option>
-                                                <option value="40*50 см" data-price="360">40*50 см</option>
-                                                <option value="50*50 см" data-price="460">50*50 см</option>
-                                                <option value="40*60 см" data-price="460">40*60 см</option>
-                                                <option value="50*70 см" data-price="540">50*70 см</option>
-                                                <option value="60*60 см" data-price="540">60*60 см</option>
-                                                <option value="60*70 см" data-price="580">60*70 см</option>
-                                                <option value="60*80 см" data-price="620">60*80 см</option>
-                                                <option value="60*90 см" data-price="680">60*90 см</option>
+                                                <option name="20*20" value="20*20 см" data-price="240" selected>20*20 см</option>
+                                                <option name="20*30" value="20*30 см" data-price="280">20*30 см</option>
+                                                <option name="30*40" value="30*40 см" data-price="340">30*40 см</option>
+                                                <option name="40*50" value="40*50 см" data-price="360">40*50 см</option>
+                                                <option name="50*50" value="50*50 см" data-price="460">50*50 см</option>
+                                                <option name="40*60" value="40*60 см" data-price="460">40*60 см</option>
+                                                <option name="50*70" value="50*70 см" data-price="540">50*70 см</option>
+                                                <option name="60*60" value="60*60 см" data-price="540">60*60 см</option>
+                                                <option name="60*70" value="60*70 см" data-price="580">60*70 см</option>
+                                                <option name="60*80" value="60*80 см" data-price="620">60*80 см</option>
+                                                <option name="60*90" value="60*90 см" data-price="680">60*90 см</option>
                                             </select>
                                         </div>
                                         <div class="form__item">
                                             <div class="form__label">Оберіть стиль:</div>
                                             <select name="style" class="form__select js-select" id="style">
-                                                <option value="Звичайне фото" selected>Звичайне фото</option>
-                                                <option value="Dream Art" data-price="100" >Dream Art (+100 грн)</option>
-                                                <option value="Коллаж" data-price="100">Коллаж (+100 грн)</option>
-                                                <option value="Love is" data-price="100">Love is (+100 грн)</option>
-                                                <option value="Вектор" data-price="100">Вектор (+100 грн)</option>
-                                                <option value="Pop Art" data-price="100">Pop Art (+100 грн)</option>
+                                                <option name="Звичайне фото" value="Звичайне фото" selected>Звичайне фото</option>
+                                                <option name="Dream Art" value="Dream Art" data-price="100" >Dream Art (+100 грн)</option>
+                                                <option name="Коллаж" value="Коллаж" data-price="100">Коллаж (+100 грн)</option>
+                                                <option name="Love is" value="Love is" data-price="100">Love is (+100 грн)</option>
+                                                <option name="Вектор" value="Вектор" data-price="100">Вектор (+100 грн)</option>
+                                                <option name="Pop Art" value="Pop Art" data-price="100">Pop Art (+100 грн)</option>
                                             </select>
                                         </div>
                                         <div class="form__item">
                                             <div class="form__label">Вид натяжки полотна:</div>
                                             <select name="stretch" class="form__select">
-                                                <option value="Звичайне фото" selected>Звичайна натяжка</option>
-                                                <option value="Галерейна натяжка" data-price="100">Галерейна натяжка (+100 грн)</option>
+                                                <option name="Звичайна натяжка" value="Звичайна натяжка" selected>Звичайна натяжка</option>
+                                                <option name="Галерейна натяжка" value="Галерейна натяжка" data-price="100">Галерейна натяжка (+100 грн)</option>
                                             </select>
                                         </div>
                                         <div class="form__item">
                                             <div class="form__label">Матеріал полотна:</div>
                                             <select name="material" class="form__select">
-                                                <option value="Звичайний поліестер" selected>Звичайний поліестер</option>
-                                                <option value="Натуральне льняне" data-price="180">Натуральне льняне (+180 грн)</option>
+                                                <option name="Звичайний поліестер" value="Звичайний поліестер" selected>Звичайний поліестер</option>
+                                                <option name="Натуральне льняне" value="Натуральне льняне" data-price="180">Натуральне льняне (+180 грн)</option>
                                             </select>
                                         </div>
                                         <div class="form__check">
                                             <div class="form__item">
                                                 <div class="checkbox">
                                                     <input id="packaging" type="checkbox" name="packaging" class="checkbox__input">
-                                                    <label for="packaging" class="checkbox__label" data-price="70"><span>Полакувати (+70 грн)</span></label>
+                                                    <label name="Полакувати" for="packaging" class="checkbox__label" data-price="70"><span>Полакувати (+70 грн)</span></label>
                                                 </div>
                                             </div>
                                             <div class="form__item">
                                                 <div class="checkbox">
                                                     <input id="urgent" type="checkbox" name="urgent" class="checkbox__input">
-                                                    <label for="urgent" class="checkbox__label" name="urgent" data-price="100"><span>Термінове замовлення? (+100 грн)</span></label>
+                                                    <label name="Термінове замовлення" for="urgent" class="checkbox__label" name="urgent" data-price="100"><span>Термінове замовлення? (+100 грн)</span></label>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form__item-top">
-                                    <div class="form__price total-price" id="price"><span>260</span> грн</div>
+                                    <div name="price" class="form__price total-price" id="price"><span>260</span> грн</div>
                                 </div>
                                 <div class="form__button">
                                     <button type="submit" class="form__btn btn">Замовити холст</button>
@@ -928,6 +928,3 @@
 
 </body>
 </html>
-
-
-

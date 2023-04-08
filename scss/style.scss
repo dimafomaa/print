@@ -525,11 +525,10 @@ body.lock {
 }
 
 
-// ========================================================
-
+// =======================================================
 .enterprise {
 	padding: 100px 0;
-	background: url('../img/bg-e.jpg');
+	background: url('../img/bg-e.webp');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -710,7 +709,7 @@ body.lock {
 
 .order {
 	padding: 50px 0;
-	background: url('../img/background28.jpg');
+	background: url('../img/background28.webp');
 	background-position: center;
 	text-align: center;
 
@@ -1606,11 +1605,13 @@ tr:hover {
 		color: #1b1b1d;
 		border-radius: 0 0 20px 0;
 		padding: 10px;
-		& span{
+
+		& span {
 			font-weight: 700;
 			font-size: 16px;
 		}
-		@media (max-width: 768px){
+
+		@media (max-width: 768px) {
 			display: none;
 		}
 	}
@@ -1788,6 +1789,7 @@ tr:hover {
 	bottom: 30px;
 }
 
+
 .popup {
 	position: fixed;
 	width: 100%;
@@ -1812,35 +1814,44 @@ tr:hover {
 	transition: all 0.3s ease-in-out;
 }
 
-@media (max-width: 450px) {
-	.popup__body {
-		padding: 0;
-	}
-}
-
 .popup__content {
-	max-width: 450px;
+	max-width: 500px;
 	position: relative;
 	transition: all 0.3s ease-in-out;
-}
-
-@media (max-width: 450px) {
-	.popup__content {
-		max-width: 100%;
-		max-height: 100%;
+	background: #b1d4cc;
+	padding: 50px;
+	text-align: center;
+	border-radius: 50px 0px 50px 50px;
+	@media (max-width: 450px){
+		padding: 50px 20px;
+		width: 100%;
 	}
 }
 
 .popup__close {
 	position: absolute;
-	right: 10px;
-	top: 10px;
-	font-size: 34px;
-	transform: rotate(45deg);
-	color: var(--white);
+	right: 20px;
+	top: 20px;
+	font-size: 24px;
+	color: #1b1b1d;
 	z-index: 101;
 	text-decoration: none;
+	transform: rotate(45deg);
 }
+
+.popup__form h2 {
+	font-weight: 700;
+	font-size: 28px;
+	line-height: 1.22;
+	margin-bottom: 20px;
+}
+
+.popup__form p {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.12;
+}
+
 
 .popup.open {
 	opacity: 1;
