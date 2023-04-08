@@ -1123,26 +1123,18 @@ tr:hover {
 	padding: 50px 0;
 
 	@media (max-width: 550px) {
-		background-color: #2c4e463e;
-
+		background-color: #CFD3D6;
 	}
 
-	&__inner{
-		// display: flex;
-		// align-items: center;
-		// justify-content: center;
+	&__inner {
 		position: relative;
-		// background-image: url('../img/bg-form.jpg');
-		// background-repeat: no-repeat;
-		// background-position: right;
-		// background-size: contain;
-		// border-radius: 0px 50px 50px 0;
-
 	}
+
 	&__title {
 		margin-bottom: 20px;
 	}
-	&__img{
+
+	&__img {
 		object-fit: contain;
 		border-radius: 0px 50px 50px 0;
 		height: 770px;
@@ -1150,6 +1142,10 @@ tr:hover {
 		top: 0;
 		right: 0;
 		z-index: -1;
+
+		@media (max-width: 950px) {
+			display: none;
+		}
 	}
 }
 
@@ -1158,15 +1154,16 @@ tr:hover {
 
 	max-width: 755px;
 	color: var(--title-text);
-	background: rgb(206, 211, 210);
 	padding: 30px;
+	background-color: #CFD3D6;
 	border-radius: 50px 0px 0 50px;
 
-	@media (max-width: 950px){
+	@media (max-width: 950px) {
 		max-width: 100%;
 		border-radius: 50px 50px 50px 0;
 
 	}
+
 	@media (max-width: 768px) {
 		border-radius: 20px 20px 20px 0;
 
@@ -1174,7 +1171,6 @@ tr:hover {
 
 	@media (max-width: 550px) {
 		padding: 20px 0;
-		background-color: transparent;
 	}
 
 	&__body {
@@ -1233,15 +1229,6 @@ tr:hover {
 		outline: none;
 		color: #1B1B1D;
 		cursor: pointer;
-	}
-
-	&__check {
-		// display: flex;
-		// justify-content: space-between;
-		// align-items: center;
-		// @media (max-width: 550px){
-		// 	display: block;
-		// }
 	}
 
 	&__price {
@@ -1569,24 +1556,31 @@ tr:hover {
 		position: relative;
 
 	}
-	&__wrapper{
+
+	&__wrapper {
 		display: flex;
 		align-items: center;
+		margin-bottom: 50px;
 	}
+
 	&__swiper {
 		max-width: 1000px;
 		margin: 0 auto;
 	}
 
 	&__slide {
-		padding-bottom: 50px;
-
+		position: relative;
 	}
 
 	&__image {
 		max-height: 300px;
 		display: flex;
+		position: relative;
 
+		&:hover .reviews__slide-text {
+			opacity: 1;
+			bottom: 0;
+		}
 	}
 
 	&__img {
@@ -1594,11 +1588,38 @@ tr:hover {
 		object-fit: cover;
 	}
 
+	&__slide-text {
+		position: absolute;
+		width: 100%;
+		bottom: -100%;
+		left: 0;
+		opacity: 0;
+		transition: all 0.3s ease-in-out;
+		z-index: 2;
+		background: rgba(243, 255, 252, 0.68);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(7.4px);
+		-webkit-backdrop-filter: blur(7.4px);
+		border: 1px solid rgba(243, 255, 252, 0.3);
+		font-size: 14px;
+		color: #1b1b1d;
+		border-radius: 0 0 20px 0;
+		padding: 10px;
+		& span{
+			font-weight: 700;
+			font-size: 16px;
+		}
+		@media (max-width: 768px){
+			display: none;
+		}
+	}
+
 	&__button {
 		display: flex;
 		justify-content: space-between;
 
-		
+
 	}
 }
 
@@ -1608,7 +1629,8 @@ tr:hover {
 .swiper-button-next::after {
 	font-size: 34px;
 	color: #2c4e46;
-	@media (max-width: 450px){
+
+	@media (max-width: 450px) {
 		display: none;
 	}
 }
@@ -1616,7 +1638,8 @@ tr:hover {
 .swiper-button-prev,
 .swiper-button-next {
 	position: absolute;
-	@media (max-width: 1150px){
+
+	@media (max-width: 1150px) {
 		position: static;
 	}
 }
@@ -1635,9 +1658,11 @@ tr:hover {
 	background-color: #2c4e46;
 
 }
+
 .swiper-autoheight .swiper-wrapper {
-    align-items: center;
+	align-items: center;
 }
+
 // ========================================
 
 .contact {
