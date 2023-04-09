@@ -519,6 +519,11 @@
                     <h2 class="forma__title title">Форма замовлення</h2>
                     <div class="forma__inner">
                         <div class="form">
+
+                            <div class="loading-icon">
+                                <img src="img/icon/loading.gif" alt="Loading">
+                            </div>
+                              
                             <form action="send-mail.php" id="form" class="form__body" enctype="multipart/form-data">
                                 <div class="forma__items">
                                     <div class="forma__block">
@@ -568,10 +573,10 @@
                                             <select name="style" class="form__select js-select" id="style">
                                                 <option name="Звичайне фото" value="Звичайне фото" selected>Звичайне фото</option>
                                                 <option name="Dream Art" value="Dream Art" data-price="100" >Dream Art (+100 грн)</option>
-                                                <option name="Коллаж" value="Коллаж" data-price="100">Коллаж (+100 грн)</option>
-                                                <option name="Love is" value="Love is" data-price="100">Love is (+100 грн)</option>
-                                                <option name="Вектор" value="Вектор" data-price="100">Вектор (+100 грн)</option>
-                                                <option name="Pop Art" value="Pop Art" data-price="100">Pop Art (+100 грн)</option>
+                                                <option name="Коллаж" value="Коллаж" data-price="110">Коллаж (+110 грн)</option>
+                                                <option name="Love is" value="Love is" data-price="120">Love is (+120 грн)</option>
+                                                <option name="Вектор" value="Вектор" data-price="130">Вектор (+130 грн)</option>
+                                                <option name="Pop Art" value="Pop Art" data-price="140">Pop Art (+140 грн)</option>
                                             </select>
                                         </div>
                                         <div class="form__item">
@@ -591,12 +596,14 @@
                                         <div class="form__check">
                                             <div class="form__item">
                                                 <div class="checkbox">
+                                                    <input type="hidden" name="packaging-price" value="70" id="packaging-price">
                                                     <input id="packaging" type="checkbox" name="packaging" class="checkbox__input">
                                                     <label name="Полакувати" for="packaging" class="checkbox__label" data-price="70"><span>Полакувати (+70 грн)</span></label>
                                                 </div>
                                             </div>
                                             <div class="form__item">
                                                 <div class="checkbox">
+                                                    <input type="hidden" name="urgent-price" value="100" id="urgent-price">
                                                     <input id="urgent" type="checkbox" name="urgent" class="checkbox__input">
                                                     <label name="Термінове замовлення" for="urgent" class="checkbox__label" data-price="100"><span>Термінове замовлення? (+100 грн)</span></label>
                                                 </div>
